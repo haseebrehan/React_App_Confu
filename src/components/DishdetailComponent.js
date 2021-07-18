@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Media } from 'reactstrap';
-import { Card, CardImg, CardText, CardBody, CardTitle } from 'reactstrap';
+import {CardImg, CardText, CardBody, CardTitle } from 'reactstrap';
 class DishDetail extends Component {
 
    renderDish(dish) {
@@ -27,7 +27,6 @@ class DishDetail extends Component {
         );
 }
 renderComments(comments) {
-
     if (comments!=null)
     {
         const com = comments.map(co=>{
@@ -60,8 +59,9 @@ renderComments(comments) {
 
 
    render(){
+    
        return(
-                <div class='container'>
+                <div className='container'>
                     {this.renderDish(this.props.dish)}
                 </div>
        );
