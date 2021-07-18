@@ -39,7 +39,7 @@ renderComments(comments) {
                     <div key={co.id}>
                     <Media tag="li">
                       <Media body>
-                          <div>{co.comment}</div>
+                        <div>{co.comment}</div>
                         <br/>
                         <div>--{co.author}, {this.formatDate(co.date)} </div>
                         <br/>
