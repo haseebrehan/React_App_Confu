@@ -6,14 +6,14 @@ class DishDetail extends Component {
    renderDish(dish) {
     if (dish != null)
         return(
-           <div className="row flex-row">
-            <Card className="col-12 col-md-5 m-1">
-                <CardImg top src={dish.image} alt={dish.name} />
+           <div className="row">
+            <div className="col-12 col-md-5 m-1">
+                <CardImg top src={dish.image} alt={dish.name}/>
                 <CardBody>
                   <CardTitle>{dish.name}</CardTitle>
                   <CardText>{dish.description}</CardText>
                 </CardBody>
-            </Card>
+            </div>
             <div className="col-12 col-md-5 m-1" >
             <h4>Comments</h4>
             {this.renderComments(dish.comments)}
@@ -38,7 +38,7 @@ renderComments(comments) {
                       <Media body>
                         <div>{co.comment}</div>
                         <br/>
-                        <div>--{co.author}, {this.formatDate(co.date)} </div>
+                        <div>--{co.author}, {new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'short', day: '2-digit'}).format(new Date(Date.parse(co.date)))} </div>
                         <br/>
                       </Media>
                     </Media>
@@ -57,20 +57,12 @@ renderComments(comments) {
         return(<div></div>)
     }
 }
-formatDate(date)
-{
-    const option = {year: 'numeric', month: 'short', day: 'numeric' };
-    const date1 = new Date(date)
-    const newdate = date1.toLocaleDateString("en-US", option)
-    return newdate;
-
-}
 
 
    render(){
        return(
-                <div>
-                    {this.renderDish(this.props.DISH)}
+                <div class='container'>
+                    {this.renderDish(this.props.dish)}
                 </div>
        );
 
