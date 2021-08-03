@@ -68,6 +68,5 @@ const DishDetail=(props) =>
         <div>Hello</div>
     );
 
-
  }
 export default DishDetail;
