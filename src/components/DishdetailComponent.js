@@ -49,7 +49,7 @@ class CommentForm extends Component {
                   Rating
                 </Label>
                 <Col md={{ size: 12 }}>
-                  <Control.select
+                  <Control.Select
                     model=".rating"
                     name="rating"
                     className="form-control"
@@ -59,7 +59,7 @@ class CommentForm extends Component {
                     <option>3</option>
                     <option>4</option>
                     <option>5</option>
-                  </Control.select>
+                  </Control.Select>
                 </Col>
               </Row>
               <Row className="form-group">
@@ -67,7 +67,7 @@ class CommentForm extends Component {
                   Your Name
                 </Label>
                 <Col md={12}>
-                  <Control.text
+                  <Control.Text
                     model=".author"
                     id="author"
                     name="author"
@@ -96,7 +96,7 @@ class CommentForm extends Component {
                   Comment
                 </Label>
                 <Col md={12}>
-                  <Control.textarea
+                  <Control.Textarea
                     model=".comment"
                     id="comment"
                     name="comment"
