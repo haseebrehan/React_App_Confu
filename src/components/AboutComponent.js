@@ -5,7 +5,7 @@ import {baseUrl} from '../shared/baseUrl';
 import { Loading } from "./LoadingComponent";
 import { Fade, Stagger } from "react-animation-components";
 
-function About(props) {
+function AboutUs(props) {
     function RenderLeader({ leader }) {
       return (
         <Media className="mt-5">
@@ -127,4 +127,4 @@ function About(props) {
     );
   }
   
-  export default About;
+  export default AboutUs;
