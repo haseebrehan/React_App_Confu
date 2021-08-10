@@ -9,7 +9,8 @@ import Footer from './FooterComponent';
 import {Switch, Route, Redirect, withRouter} from 'react-router-dom';
 import { connect } from 'react-redux';
 import {postFeedback,postComment, fetchDishes, fetchComments, fetchPromos, fetchLeaders } from '../redux/ActionCreators';
-import {actions} from 'react-redux-form'
+import {actions} from 'react-redux-form';
+import { TransitionGroup, CSSTransition } from 'react-transition-group';
 
 const mapStateToProps = state => {
     return {
@@ -77,6 +78,8 @@ class Main extends Component {
             return (
             <div>
                 <Header/>
+                <TransitionGroup>
+                <CSSTransition key={this.props.location.key} classNames="page" timeout={300}>
                 <Switch>
                 <Route path='/home' component={HomePage} />
                 <Route exact path='/menu' component={() => <Menu dishes={this.props.dishes} />} />
@@ -89,6 +92,8 @@ class Main extends Component {
                   />} />
                 <Redirect to='/home' />
                 </Switch>
+                </CSSTransition>
+                </TransitionGroup>
                 <Footer/>
             </div>
             );
