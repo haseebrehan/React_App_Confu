@@ -84,7 +84,11 @@ class Main extends Component {
                 <Route path='/home' component={HomePage} />
                 <Route exact path='/menu' component={() => <Menu dishes={this.props.dishes} />} />
                 <Route path='/menu/:dishId' component={DishWithId}/>
-                <Route path='/aboutus' component={() => <About leaders={this.props.leaders}/> }/>
+                <About
+                      leaders={this.props.leaders.leaders}
+                      leaderLoading={this.props.leaders.isLoading}
+                      leaderErrMess={this.props.leaders.errMess}
+                    />
                 <Route exact path='/contactus' component={() => 
                 <Contact 
                   resetFeedbackForm={this.props.resetFeedbackForm}
